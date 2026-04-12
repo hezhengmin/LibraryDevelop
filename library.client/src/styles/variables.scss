@@ -1,0 +1,120 @@
+// ============================================
+// 全局 SCSS 變數
+// ============================================
+
+// 顏色系統
+// --------------------------------------------
+$primary-color: #409eff;
+$success-color: #67c23a;
+$warning-color: #e6a23c;
+$danger-color: #f56c6c;
+$info-color: #909399;
+
+// 文字顏色
+$text-primary: #303133;
+$text-regular: #606266;
+$text-secondary: #909399;
+$text-placeholder: #c0c4cc;
+
+// 邊框顏色
+$border-base: #dcdfe6;
+$border-light: #e4e7ed;
+$border-lighter: #ebeef5;
+$border-extra-light: #f2f6fc;
+
+// 背景顏色
+$bg-color: #ffffff;
+$bg-page: #f5f7fa;
+$bg-overlay: rgba(0, 0, 0, 0.5);
+
+// 陰影
+$box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.1);
+$box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
+$box-shadow-dark: 0 2px 12px rgba(0, 0, 0, 0.15);
+
+// 尺寸
+// --------------------------------------------
+$spacing-xs: 8px;
+$spacing-sm: 12px;
+$spacing-base: 16px;
+$spacing-md: 20px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// 字體大小
+$font-size-xs: 12px;
+$font-size-sm: 13px;
+$font-size-base: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+
+// 行高
+$line-height-base: 1.5;
+$line-height-tight: 1.25;
+$line-height-loose: 1.75;
+
+// 圓角
+$border-radius-xs: 2px;
+$border-radius-sm: 4px;
+$border-radius-base: 6px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+$border-radius-round: 20px;
+$border-radius-circle: 50%;
+
+// 動畫
+// --------------------------------------------
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.2s ease;
+$transition-slow: all 0.5s ease;
+
+// Z-Index 層級
+// --------------------------------------------
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+
+// 佈局尺寸
+// --------------------------------------------
+$sidebar-width: 210px;
+$sidebar-collapsed-width: 54px;
+$header-height: 50px;
+$footer-height: 60px;
+
+// 側邊欄配色（vue3-element-admin 風格）
+// --------------------------------------------
+$menu-bg: #304156;
+$menu-text: #bfcbd9;
+$menu-active-text: #409eff;
+$menu-hover: #263445;
+$sub-menu-bg: #1f2d3d;
+$sub-menu-hover: #001528;
+$sub-menu-active-text: #f4f4f5;
+
+// 登入頁配色
+// --------------------------------------------
+$login-bg: #2d3a4b;
+$login-dark-gray: #889aa4;
+$login-light-gray: #eee;
+$login-cursor: #fff;
+
+// 斷點（響應式）
+// --------------------------------------------
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+$screen-xl: 1600px;
+
+// 容器寬度
+$container-sm: 540px;
+$container-md: 720px;
+$container-lg: 960px;
+$container-xl: 1140px;
+$container-xxl: 1320px;
