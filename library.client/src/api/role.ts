@@ -17,7 +17,7 @@ export interface Role {
 export interface RoleDetail {
   id: string
   name: string
-  permissions: Permission[]
+  permissions: string[]
 }
 
 /**

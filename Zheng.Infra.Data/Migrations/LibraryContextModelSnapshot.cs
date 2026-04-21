@@ -375,7 +375,7 @@ namespace Zheng.Infra.Data.Migrations
                             CreatedAt = new DateTime(2026, 4, 11, 0, 0, 0, 0, DateTimeKind.Utc),
                             Description = "系統管理員",
                             Name = "系統管理員",
-                            NormalizedName = "ADMIN"
+                            NormalizedName = "系統管理員"
                         });
                 });
 

@@ -82,8 +82,8 @@
         <el-descriptions-item label="角色 ID">{{ viewRole?.id }}</el-descriptions-item>
         <el-descriptions-item label="角色名稱">{{ viewRole?.name }}</el-descriptions-item>
         <el-descriptions-item label="權限列表">
-          <el-tag v-for="permission in viewRole?.permissions" :key="permission.value" class="permission-tag">
-            {{ getPermissionName(permission.value) }}
+          <el-tag v-for="permission in viewRole?.permissions" :key="permission" class="permission-tag">
+            {{ getPermissionName(permission) }}
           </el-tag>
           <span v-if="!viewRole?.permissions || viewRole.permissions.length === 0" class="text-muted">無權限</span>
         </el-descriptions-item>
@@ -238,11 +238,7 @@ const handleView = async (role: Role) => {
   try {
     const response = await roleApi.getRole(role.id)
     if (response.succeeded && response.data) {
-      viewRole.value = {
-        id: response.data.id,
-        name: response.data.name,
-        permissions: response.data.permissions || []
-      }
+      viewRole.value = response.data
       viewDialogVisible.value = true
     } else {
       ElMessage.error(response.message || '載入角色詳情失敗')
@@ -258,7 +254,7 @@ const handleEdit = async (role: Role) => {
   try {
     const response = await roleApi.getRole(role.id)
     if (response.succeeded && response.data) {
-      const existingPermissions = response.data.permissions?.map(p => p.value) || []
+      const existingPermissions = response.data.permissions || []
       editingRoleId.value = role.id
       formData.value = {
         name: response.data.name,
@@ -284,7 +280,7 @@ const handleEdit = async (role: Role) => {
 // 從查看對話框進入編輯
 const handleEditFromView = () => {
   if (viewRole.value) {
-    const existingPermissions = viewRole.value.permissions?.map(p => p.value) || []
+    const existingPermissions = viewRole.value.permissions || []
     editingRoleId.value = viewRole.value.id
     formData.value = {
       name: viewRole.value.name,

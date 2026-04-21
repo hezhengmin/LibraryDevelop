@@ -52,7 +52,7 @@ public static class SeedData
         {
             Id = AdminRoleId,
             Name = "系統管理員",
-            NormalizedName = "ADMIN",
+            NormalizedName = "系統管理員",
             Description = "系統管理員",
             CreatedAt = SeedDate,
             ConcurrencyStamp = "00000000-0000-0000-0000-000000000002"

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -43,7 +43,7 @@ namespace Zheng.Bll.Services
             if (pageSize < 1) pageSize = 10;
             if (pageSize > 100) pageSize = 100;
 
-            var query = _context.Users.Where(u => u.IsActive).AsQueryable();
+            var query = _context.Users.AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(keyword))
             {
@@ -79,7 +79,7 @@ namespace Zheng.Bll.Services
         public async Task<UserDto?> GetUserWithRolesAsync(Guid id)
         {
             return await _context.Users
-                .Where(u => u.Id == id && u.IsActive)
+                .Where(u => u.Id == id)
                 .Select(u => new UserDto
                 {
                     Id = u.Id,
@@ -138,7 +138,7 @@ namespace Zheng.Bll.Services
                 foreach (var roleName in input.Roles)
                 {
                     var role = await _context.Roles
-                        .FirstOrDefaultAsync(r => r.NormalizedName == roleName.ToUpperInvariant());
+                        .FirstOrDefaultAsync(r => r.Name == roleName);
                     if (role != null)
                     {
                         _context.UserRoles.Add(new UserRole
@@ -189,7 +189,7 @@ namespace Zheng.Bll.Services
                 foreach (var roleName in input.Roles)
                 {
                     var role = await _context.Roles
-                        .FirstOrDefaultAsync(r => r.NormalizedName == roleName.ToUpperInvariant());
+                        .FirstOrDefaultAsync(r => r.Name == roleName);
                     if (role != null)
                     {
                         _context.UserRoles.Add(new UserRole
